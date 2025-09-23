@@ -11,44 +11,34 @@ import { ArrowRight, Check, Loader2, Sparkles } from "lucide-react";
 
 const buttonVariants = cva(
   [
-    // base
     "inline-flex items-center justify-center gap-2 select-none whitespace-nowrap",
-    "rounded-full text-sm font-medium transition-all",
+    "text-sm font-medium transition-all",
     "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ring-offset-background",
     "disabled:pointer-events-none disabled:opacity-50",
-    // icon sizing
-    "[&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg]:size-4",
-    // tactile press + smooth hover
-    "active:translate-y-[1px]",
+    "[&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg]:size-5", // slightly bigger icons
   ].join(" "),
   {
     variants: {
       variant: {
-        // Solid primary CTA
         default: "bg-primary text-primary-foreground hover:brightness-95",
-        // Softer, brand-tinted background (great for secondary CTAs)
         soft: "bg-primary/10 text-primary hover:bg-primary/15",
-        // Neutral outline; fills slightly on hover
         outline: "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
-        // Quiet, surface-level
         ghost: "hover:bg-accent hover:text-accent-foreground",
-        // Inline textual action
         link: "text-primary underline-offset-4 hover:underline",
-        // Statusful variants
         destructive: "bg-destructive text-destructive-foreground hover:brightness-95",
         success: "bg-emerald-600 text-white hover:brightness-95",
         warning: "bg-amber-500 text-black hover:brightness-95",
       },
       size: {
-        sm: "h-9 px-3 text-xs",
-        default: "h-10 px-4",
-        lg: "h-11 px-6 text-base",
-        xl: "h-12 px-7 text-base",
-        icon: "h-10 w-10",
+        sm: "h-10 px-4 text-sm",       // bumped up
+        default: "h-12 px-6 text-base", 
+        lg: "h-14 px-8 text-lg",
+        xl: "h-16 px-10 text-lg",
+        icon: "h-12 w-12",
       },
       shape: {
-        default: "rounded-full",
-        pill: "rounded-full",
+        default: "rounded-md", // squared corners instead of rounded-full
+        pill: "rounded-full",  // still allow pill as an option
       },
       elevation: {
         flat: "shadow-none",
@@ -60,7 +50,6 @@ const buttonVariants = cva(
       },
     },
     compoundVariants: [
-      // Make soft/destructive/success/warning work with elevation nicely
       { elevation: "elevated", variant: ["default", "soft", "destructive", "success", "warning"], class: "shadow-primary/20" },
     ],
     defaultVariants: {
@@ -72,6 +61,7 @@ const buttonVariants = cva(
     },
   }
 );
+
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,

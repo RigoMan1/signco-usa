@@ -2,7 +2,12 @@ import type { Config } from "tailwindcss";
 
 export default {
   darkMode: ["class"],
-  content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
+  content: [
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+  ],
   prefix: "",
   theme: {
     container: {
@@ -10,12 +15,22 @@ export default {
       padding: "2rem",
       screens: {
         "2xl": "1400px",
+        "3xl": "1600px", // optional extra-wide support for hero sections
       },
     },
     extend: {
       fontFamily: {
-        sans: ["var(--font-sans)"],
+        sans: ["var(--font-sans)"], // Montserrat → headings, UI
+        "sans-alt": ["var(--font-sans-alt)"], // Inter → body text
         serif: ["var(--font-serif)"],
+      },
+      fontSize: {
+        display: ["4.5rem", { lineHeight: "1.1", fontWeight: "700" }], // hero headlines
+        h1: ["3rem", { lineHeight: "1.2", fontWeight: "700" }],
+        h2: ["2.25rem", { lineHeight: "1.3", fontWeight: "600" }],
+        h3: ["1.875rem", { lineHeight: "1.35", fontWeight: "600" }],
+        body: ["1rem", { lineHeight: "1.6", fontWeight: "400" }],
+        small: ["0.875rem", { lineHeight: "1.5", fontWeight: "400" }],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -67,22 +82,19 @@ export default {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      boxShadow: {
+        soft: "0 2px 6px rgba(0,0,0,0.08)",
+        medium: "0 4px 12px rgba(0,0,0,0.12)",
+        strong: "0 6px 20px rgba(0,0,0,0.18)",
+      },
       keyframes: {
         "accordion-down": {
-          from: {
-            height: "0",
-          },
-          to: {
-            height: "var(--radix-accordion-content-height)",
-          },
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
         },
         "accordion-up": {
-          from: {
-            height: "var(--radix-accordion-content-height)",
-          },
-          to: {
-            height: "0",
-          },
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
         },
       },
       animation: {

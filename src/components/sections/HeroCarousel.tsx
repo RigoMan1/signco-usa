@@ -93,7 +93,7 @@ export default function HeroCarousel() {
 								<div className="absolute inset-0 flex items-center">
 									<div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
                     <div className="max-w-2xl text-left text-white py-8 lg:py-16">
-                      <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight drop-shadow-lg">
+                      <h1  className="text-4xl sm:text-7xl font-bold tracking-tight drop-shadow-lg">
                         {slide.title}
                       </h1>
                       <p className="mt-4 text-lg sm:text-xl text-white/80 leading-relaxed">
