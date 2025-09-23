@@ -7,6 +7,8 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Product from "./pages/Product";
 import Header from "@/components/sections/Header";
+import CustomerLogos from "@/components/sections/CustomerLogos";
+import Footer from "@/components/sections/Footer";
 import Category from "./pages/Category";
 
 const queryClient = new QueryClient();
@@ -25,6 +27,8 @@ const App = () => (
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <CustomerLogos />
+        <Footer />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

@@ -6,6 +6,7 @@ import {
 	CarouselPrevious,
 } from '@/components/ui/carousel';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
+import SectionHeader from '@/components/SectionHeader';
 
 const productCards = [
 	{
@@ -49,15 +50,11 @@ const productCards = [
 export default function ProductHighlightSection() {
 	return (
 		<section className='mx-auto max-w-7xl px-4 py-14 lg:px-8'>
-			<div className='text-center'>
-				<h2 className='text-2xl font-bold sm:text-3xl'>
-					Full-service signage, end-to-end.
-				</h2>
-				<p className='mx-auto mt-2 max-w-2xl text-sm text-muted-foreground'>
-					Design, fabrication, digital printing, and installation—everything
-					you need to make your business stand out.
-				</p>
-			</div>
+			<SectionHeader
+				title='Full-service signage, end-to-end.'
+				text='Design, fabrication, digital printing, and installation—everything you
+					need to make your business stand out.'
+			/>
 
 			<div className='mt-8'>
 				<Carousel className='w-full'>
@@ -93,5 +90,3 @@ export default function ProductHighlightSection() {
 		</section>
 	);
 }
-
-
