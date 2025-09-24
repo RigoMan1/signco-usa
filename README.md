@@ -1,73 +1,71 @@
-# Welcome to your Lovable project
+## Signco Mockup
 
-## Project info
+A simple React + Vite + TypeScript project styled with Tailwind CSS and using Radix/shadcn-inspired UI components.
 
-**URL**: https://lovable.dev/projects/133ccf2a-b4e7-4c0e-be1f-8f1671614d68
+### Tech Stack
+- **Build**: Vite 5, TypeScript 5
+- **UI**: Tailwind CSS, Radix Primitives, shadcn-inspired components (`src/components/ui`), Lucide icons
+- **State/Data**: React 18, TanStack Query
+- **Routing**: React Router
 
-## How can I edit this code?
+### Prerequisites
+- Node.js 18+ (Vite 5 requirement)
+- A package manager: npm, pnpm, or bun
 
-There are several ways of editing your application.
+### Quick Start
+```bash
+# Install dependencies
+npm install
+# or
+pnpm install
+# or (bun detected by bun.lockb)
+bun install
 
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/133ccf2a-b4e7-4c0e-be1f-8f1671614d68) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start dev server (http://localhost:8080)
 npm run dev
+
+# Build for production
+npm run build
+
+# Preview the production build
+npm run preview
 ```
 
-**Edit a file directly in GitHub**
+### Scripts
+- `dev`: Start Vite dev server (binds to all interfaces on port 8080)
+- `build`: Production build
+- `build:dev`: Development-mode build (useful for faster, non-minified output)
+- `preview`: Preview built assets locally
+- `lint`: Run ESLint
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Project Structure
+```
+src/
+  components/
+    ui/            # Reusable UI components (shadcn-inspired)
+    sections/      # Page sections
+    header/        # Header-related components
+  pages/           # Route components
+  hooks/           # Custom hooks
+  lib/             # Client utilities
+  utils/           # Helpers/utilities
+  data/            # Static/mock data
+```
 
-**Use GitHub Codespaces**
+### Conventions
+- Import alias: `@` points to `src` (see `vite.config.ts`).
+- Tailwind config lives in `tailwind.config.ts`; PostCSS in `postcss.config.js`.
+- shadcn config is in `components.json` (used to scaffold UI pieces when needed).
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### UI Components (SUI)
+- Preferred UI components live in `src/components/ui`.
+- If your workspace includes a private SUI library, it is expected under `/modules/sui` (optional); otherwise, use the local components in `src/components/ui`.
 
-## What technologies are used for this project?
+### Notes
+- Dev server runs on `http://localhost:8080` (see `vite.config.ts`).
+- This repository does not require environment variables for basic usage.
 
-This project is built with:
+### License
+Proprietary – internal use only (update if a license is chosen).
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
 
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/133ccf2a-b4e7-4c0e-be1f-8f1671614d68) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)

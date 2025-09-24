@@ -187,12 +187,6 @@ const Header = () => {
             <Phone className='h-4 w-4' /> Call
           </a>
 
-          <Link to='/quote' className='block'>
-            <Button size='sm' variant='secondary' className='h-7 px-2 text-[11px]'>
-              Free Estimate
-            </Button>
-          </Link>
-
           <Sheet>
             <SheetTrigger asChild>
               <Button
