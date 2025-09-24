@@ -6,6 +6,7 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 import { CheckCircle2 } from 'lucide-react';
+import ServicesSection from '@/components/sections/ServicesSection';
 
 const Product = () => {
 	const { productId } = useParams();
@@ -134,6 +135,9 @@ const Product = () => {
 					</Tabs>
 				</div>
 			</div>
+
+			<ServicesSection className='mt-32' />
+
 		</div>
 	);
 };

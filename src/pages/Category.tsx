@@ -2,6 +2,7 @@ import { useMemo } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { categories } from '@/data/categories';
 import { products } from '@/data/products';
+import ServicesSection from '@/components/sections/ServicesSection';
 
 const Category = () => {
   const { categoryId } = useParams();
@@ -55,6 +56,8 @@ const Category = () => {
           </Link>
         ))}
       </div>
+
+      <ServicesSection className='mt-32' />
     </div>
   );
 };
