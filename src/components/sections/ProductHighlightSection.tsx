@@ -38,7 +38,7 @@ export default function ProductHighlightSection() {
 							<CarouselItem
 								key={product.id}
 								className='basis-3/4 sm:basis-1/2 md:basis-1/3 lg:basis-1/4 xl:basis-1/5'>
-								<article className='bg-yellow-400 h-full rounded-3xl border bg-card p-2 shadow-sm'>
+								<article className='bg-yellow-400 h-full rounded-3xl border bg-card p-1 shadow-sm'>
 									<div className='overflow-hidden rounded-2xl bg-muted'>
 										<div className='aspect-square w-full'>
 											<img

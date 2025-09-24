@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { categories } from '@/data/categories';
 import { products } from '@/data/products';
@@ -12,44 +11,115 @@ import {
 	NavigationMenuContent,
 } from '@/components/ui/navigation-menu';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { Search, Phone, Mail, MapPin, Clock, Menu } from 'lucide-react';
+import {
+	Search,
+	Phone,
+	Mail,
+	MapPin,
+	Clock,
+	Menu,
+	Info,
+	ArrowRight,
+} from 'lucide-react';
 
 const Header = () => {
 	return (
 		<header className='sticky top-0 z-50 border-b'>
-			{/* Top band with location, hours, and contact */}
-			<div className='bg-gradient-to-r from-blue-600 to-blue-700 text-white'>
-				<div className='mx-auto flex max-w-7xl flex-col gap-2 px-4 py-2 text-xs lg:flex-row lg:items-center lg:justify-between lg:px-8'>
+			{/* ===== Top band ===== */}
+			<div className='hidden sm:block bg-gradient-to-r from-blue-600 to-blue-700 text-white'>
+				<div className='mx-auto flex max-w-7xl flex-col gap-2 px-4 py-1.5 text-xs md:flex-row md:items-center md:justify-between md:px-8'>
 					<div className='flex flex-wrap items-center gap-4'>
-						<span className='flex items-center gap-1'>
+						<span className='flex items-center gap-1.5'>
 							<MapPin className='h-3.5 w-3.5' /> 1350 University Ave, Berkeley,
 							CA 94702
 						</span>
-						<span className='hidden h-3 w-px bg-white/40 lg:inline' />
-						<span className='flex items-center gap-1'>
+						<span className='hidden h-3 w-px bg-white/40 md:inline' />
+						<span className='flex items-center gap-1.5'>
 							<Clock className='h-3.5 w-3.5' /> Mon–Fri 9:00–5:00
 						</span>
 					</div>
 					<div className='flex flex-wrap items-center gap-4'>
 						<a
 							href='tel:+15108487446'
-							className='inline-flex items-center gap-1 hover:underline'>
+							className='inline-flex items-center gap-1.5 hover:underline'>
 							<Phone className='h-3.5 w-3.5' /> (510) 848-7446
 						</a>
-						<span className='hidden h-3 w-px bg-white/40 lg:inline' />
+						<span className='hidden h-3 w-px bg-white/40 md:inline' />
 						<a
 							href='mailto:info@signcousa.com'
-							className='inline-flex items-center gap-1 hover:underline'>
+							className='inline-flex items-center gap-1.5 hover:underline'>
 							<Mail className='h-3.5 w-3.5' /> info@signcousa.com
 						</a>
 					</div>
 				</div>
 			</div>
 
-			{/* Main header row */}
+			{/* Mobile: slim utility bar */}
+			<div className='sm:hidden bg-blue-600 text-white'>
+				<div className='mx-auto flex max-w-7xl items-center justify-between px-3 py-1'>
+					<a
+						href='tel:+15108487446'
+						className='inline-flex items-center gap-1 text-xs font-medium hover:underline'
+						aria-label='Call SignCo USA'>
+						<Phone className='h-4 w-4' /> Call
+					</a>
+
+					<Link to='/quote' className='block'>
+						<Button
+							size='sm'
+							variant='secondary'
+							className='h-7 px-2 text-[11px]'>
+							Free Estimate
+						</Button>
+					</Link>
+
+					<Sheet>
+						<SheetTrigger asChild>
+							<Button
+								variant='ghost'
+								size='icon'
+								className='h-7 w-7 text-white/90 hover:bg-white/10'
+								aria-label='Open contact & hours'>
+								<Info className='h-4 w-4' />
+							</Button>
+						</SheetTrigger>
+						<SheetContent side='bottom' className='h-auto p-4'>
+							<div className='space-y-3 text-sm'>
+								<div className='font-semibold'>Contact & Hours</div>
+								<a
+									href='https://maps.google.com/?q=1350+University+Ave,+Berkeley,+CA+94702'
+									target='_blank'
+									rel='noopener noreferrer'
+									className='flex items-start gap-2 rounded-lg bg-muted p-2'>
+									<MapPin className='mt-0.5 h-4 w-4 text-muted-foreground' />
+									<span>1350 University Ave, Berkeley, CA 94702</span>
+								</a>
+								<div className='flex items-start gap-2 rounded-lg bg-muted p-2'>
+									<Clock className='mt-0.5 h-4 w-4 text-muted-foreground' />
+									<span>Mon–Fri 9:00–5:00</span>
+								</div>
+								<a
+									href='tel:+15108487446'
+									className='flex items-start gap-2 rounded-lg bg-muted p-2'>
+									<Phone className='mt-0.5 h-4 w-4 text-muted-foreground' />
+									<span>(510) 848-7446</span>
+								</a>
+								<a
+									href='mailto:info@signcousa.com'
+									className='flex items-start gap-2 rounded-lg bg-muted p-2'>
+									<Mail className='mt-0.5 h-4 w-4 text-muted-foreground' />
+									<span>info@signcousa.com</span>
+								</a>
+							</div>
+						</SheetContent>
+					</Sheet>
+				</div>
+			</div>
+
+			{/* ===== Main header row ===== */}
 			<div className='bg-white'>
 				<div className='mx-auto max-w-7xl px-4 lg:px-8'>
-					<div className='flex items-center justify-between py-3'>
+					<div className='flex items-center justify-between py-2 lg:py-3'>
 						<div className='flex items-center gap-3 lg:gap-6'>
 							<Sheet>
 								<SheetTrigger asChild>
@@ -90,7 +160,7 @@ const Header = () => {
 								<img
 									src='/images/logo.webp'
 									alt='SignCo USA Logo'
-									className='h-12 w-auto lg:h-16'
+									className='h-10 w-auto lg:h-20'
 								/>
 							</Link>
 						</div>
@@ -131,7 +201,7 @@ const Header = () => {
 				</div>
 			</div>
 
-			{/* NAV (desktop) */}
+			{/* ===== NAV (desktop) ===== */}
 			<div className='hidden border-t bg-gray-50 text-foreground lg:block'>
 				<div className='mx-auto max-w-7xl px-4 lg:px-8'>
 					<nav aria-label='Primary' className='flex items-center'>
@@ -143,8 +213,12 @@ const Header = () => {
 									);
 									return (
 										<NavigationMenuItem key={category.id}>
-											<NavigationMenuTrigger className='bg-transparent px-3 py-2 hover:bg-transparent hover:text-foreground data-[state=open]:text-foreground'>
-												{category.name}
+											<NavigationMenuTrigger className='bg-transparent'>
+												<Link
+													to={`/categories/${category.id}`}
+													>
+													{category.name}
+												</Link>
 											</NavigationMenuTrigger>
 
 											<NavigationMenuContent>
@@ -153,11 +227,6 @@ const Header = () => {
 														<h3 className='text-base font-semibold text-foreground'>
 															{category.name}
 														</h3>
-														<Link
-															to={`/categories/${category.id}`}
-															className='text-sm text-primary hover:underline'>
-															View all
-														</Link>
 													</div>
 													<div className='grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4'>
 														{items.map((product) => (
@@ -183,6 +252,17 @@ const Header = () => {
 																</div>
 															</Link>
 														))}
+													</div>
+													{/* Full-bleed footer "View all" bar */}
+													<div className='mt-6 -mx-6 -mb-6'>
+														<Link
+															to={`/categories/${category.id}`}
+															className='block rounded-b-xl border-t bg-muted/60 transition hover:bg-muted'>
+															<span className='inline-flex w-full items-center justify-center gap-1.5 py-3 text-sm font-medium text-primary whitespace-nowrap'>
+																Shop all {category.name}
+																<ArrowRight className='h-4 w-4' />
+															</span>
+														</Link>
 													</div>
 												</div>
 											</NavigationMenuContent>

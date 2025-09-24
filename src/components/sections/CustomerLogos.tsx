@@ -17,12 +17,7 @@ const CustomerLogos = () => {
 				<Separator className='mx-auto mt-8 w-28 bg-gray-200' />
 
 				{/* Logos Section */}
-				<div
-					className='mt-12 flex items-center justify-center'
-					initial={{ opacity: 0, y: 20 }}
-					whileInView={{ opacity: 1, y: 0 }}
-					viewport={{ once: true }}
-					transition={{ duration: 0.6, ease: 'easeOut' }}>
+				<div className='mt-12 flex items-center justify-center'>
 					<img
 						src='/images/signco-customer-logos.webp'
 						alt='A showcase of customer logos that trust SignCo'
